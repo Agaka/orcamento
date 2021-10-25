@@ -1,0 +1,6 @@
+O trabalho foi realizado individualmente usando os mesmos padrões, então cada tabela é atribuída à um
+aluno, porém resolvemos já unir os projetos para já ir desenvolvendo o projeto em si.
+
+Tabela de  = Allan
+Tabela de  = Luiz
+Tabela de  = Renata

@@ -1,4 +1,4 @@
-const mysql = require('mysql2')
+import mysql from 'mysql2'
 
 // create the connection to database
 const con = mysql.createConnection({
@@ -8,4 +8,4 @@ const con = mysql.createConnection({
     password: 'root'
   });
 
-module.exports = con
+export default con

@@ -38,14 +38,24 @@ class Users {
         return this.password
     }
 
-    create(connection) {
-        const sql = "INSERT INTO Users (name, email, phone, password) VALUES (?, ?, ?, ?);"
+    create(connection, n, e, p, pw) {
+        this.name = n
+        this.email = e
+        this.phone = p
+        this.password = pw
+        const sql = "INSERT INTO users (name, email, phone, password) VALUES (?, ?, ?, ?);"
 
         connection.query(sql, [this.name, this.email, this.phone, this.password], (err, result) => {
-            if (err) throw err
+            if (err) {
+                throw err
+            } else {
+                const confirm = true
+                return confirm
+            }
         })
+
     }
     
 }
 
-module.exports = Users
+export { Users }

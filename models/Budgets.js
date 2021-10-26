@@ -1,4 +1,4 @@
-class Budget {
+class Budgets {
     constructor() {
         this.userId = 0
         this.measures = ""
@@ -29,8 +29,12 @@ class Budget {
         return this.description
     }
 
-    create(connection) {
-        const sql = "INSERT INTO Budget (userId, measures, description) VALUES (?, ?, ?);"
+    create(connection, u, m, d) {
+        this.userId = u
+        this.measures = m
+        this.description = d
+
+        const sql = "INSERT INTO budget (userId, measures, description) VALUES (?, ?, ?);"
 
         connection.query(sql, [this.userId, this.measures, this.description], (err, result) => {
             if (err) throw err
@@ -39,4 +43,4 @@ class Budget {
 
 }
 
-module.exports = Budget
+export { Budgets }

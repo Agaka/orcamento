@@ -1,7 +1,5 @@
 import { Users } from "../models/Users.js"
 import con from '../db.js'
-import path from "path"
-const __dirname = path.resolve();
 import pkg from 'bcryptjs';
 const { hash } = pkg;
 
@@ -16,7 +14,7 @@ class CreateUserController {
 
         const user = await User.create(con, name, email, phone, passwordHash)
 
-        return res.sendFile(__dirname + "/views/success.html")
+        return res.render("success.ejs")
 
     }
 }

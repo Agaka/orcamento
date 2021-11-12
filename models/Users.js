@@ -53,7 +53,15 @@ class Users {
                 return confirm
             }
         })
+    }
 
+    list(connection, callback) {
+        const sql = "SELECT * FROM users;"
+
+        connection.query(sql, (err, result) => {
+            if (err) throw err
+            return callback(result)
+        })
     }
     
 }

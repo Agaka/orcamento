@@ -41,6 +41,15 @@ class Budgets {
         })
     }
 
+    list(connection, callback) {
+        const sql = "SELECT * FROM budget;"
+
+        connection.query(sql, (err, result) => {
+            if (err) throw err
+            return callback(result)
+        })
+    }
+
 }
 
 export { Budgets }

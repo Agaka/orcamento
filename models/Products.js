@@ -31,7 +31,14 @@ class Products {
         })
     }
 
-    
+    list(connection, callback) {
+        const sql = "SELECT * FROM products;"
+
+        connection.query(sql, (err, result) => {
+            if (err) throw err
+            return callback(result)
+        })
+    }
 
 }
 

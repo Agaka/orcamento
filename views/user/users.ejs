@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users List</title>
+    <style>
+        table, td, th {
+            border: solid #000 2px;
+            border-collapse: collapse;
+        }
+
+    </style>
 </head>
 <body>
     <a href="/users/insert">Cadastrar usuários</a>
@@ -20,7 +27,15 @@
             </tr>
         </thead>
         <tbody>
-            
+            <% users.forEach((user, index) => { %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.phone %></td>
+                    <td><%= user.password %></td>
+                </tr>
+            <% }) %>
         </tbody>
     </table>
 </body>

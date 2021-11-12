@@ -5,9 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products List</title>
+    <style>
+        table, td, th {
+            border: solid #000 2px;
+            border-collapse: collapse;
+        }
+
+    </style>
 </head>
 <body>
     <a href="/products/insert">Cadastrar produtos</a>
     <h1>Lista de produtos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Disponibilidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach((product, index) => { %>
+                <tr>
+                    <td><%= product.id %></td>
+                    <td><%= product.name %></td>
+                    <% if (product.availability == '1') { %>
+                        <td>Disponivel</td>
+                    <% } else { %>
+                        <td>Indisponivel</td>
+                    <% } %>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
 </body>
 </html>

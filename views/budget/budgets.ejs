@@ -5,9 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budgets List</title>
+    <style>
+        table, td, th {
+            border: solid #000 2px;
+            border-collapse: collapse;
+        }
+
+    </style>
 </head>
 <body>
     <a href="/budgets/insert">Cadastrar orçamento</a>
     <h1>Lista de orçamentos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Id de usuário</th>
+                <th>Medidas</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% budgets.forEach((budget, index) => { %>
+                <tr>
+                    <td><%= budget.id %></td>
+                    <td><%= budget.userId %></td>
+                    <td><%= budget.measures %></td>
+                    <td><%= budget.description %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
 </body>
 </html>

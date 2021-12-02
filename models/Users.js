@@ -63,6 +63,14 @@ class Users {
             return callback(result)
         })
     }
+
+    delete(connection, id) {
+        const sql = "DELETE FROM users WHERE id = ?"
+
+        connection.query(sql, [id], (err, result) => {
+            if (err) throw err
+        })
+    }
     
 }
 

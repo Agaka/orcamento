@@ -5,9 +5,11 @@ import { CreateProductController } from "./controllers/CreateProductController.j
 import { ListUserController } from "./controllers/ListUserController.js"
 import { ListBudgetController } from "./controllers/ListBudgetController.js"
 import { ListProductController } from "./controllers/ListProductController.js"
+import { DeleteUserController } from "./controllers/DeleteUserController.js"
 
 const createUserController = new CreateUserController()
 const listUserController = new ListUserController()
+const deleteUserController =  new DeleteUserController()
 const createBudgetController = new CreateBudgetController()
 const listBudgetController = new ListBudgetController()
 const createProductController = new CreateProductController()
@@ -18,6 +20,7 @@ const router = Router()
 // Users
 router.post("/users", createUserController.handle)
 router.get('/users', listUserController.handle)
+router.get('/users/delete/:id', deleteUserController.handle)
 router.get('/users/insert', (req, res) => {
     res.render("user/insert.ejs", {})
 })

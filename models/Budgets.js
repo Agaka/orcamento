@@ -50,6 +50,14 @@ class Budgets {
         })
     }
 
+    delete(connection, id) {
+        const sql = "DELETE FROM budget WHERE id = ?"
+
+        connection.query(sql, [id], (err, result) => {
+            if (err) throw err
+        })
+    }
+
 }
 
 export { Budgets }

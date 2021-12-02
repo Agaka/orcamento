@@ -40,6 +40,14 @@ class Products {
         })
     }
 
+    delete(connection, id) {
+        const sql = "DELETE FROM products WHERE id = ?"
+
+        connection.query(sql, [id], (err, result) => {
+            if (err) throw err
+        })
+    }
+
 }
 
 export { Products }

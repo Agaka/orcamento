@@ -65,13 +65,29 @@ class Users {
     }
 
     delete(connection, id) {
-        const sql = "DELETE FROM users WHERE id = ?"
+        const sql = "DELETE FROM users WHERE id = ?;"
 
         connection.query(sql, [id], (err, result) => {
             if (err) throw err
         })
     }
     
+    findById(connection, id, callback) {
+        const sql = `SELECT * FROM users WHERE id = ${id};`
+
+        connection.query(sql, (err, result) => {
+            if (err) throw err
+            return callback(result)
+        })
+    }
+
+    update(connection, fields) {
+        const sql = `UPDATE users SET name = '${fields.name}', email = '${fields.email}', phone = '${fields.phone}' WHERE id = ${fields.id};`
+
+        connection.query(sql, (err, result) => {
+            if (err) throw err
+        })
+    }
 }
 
 export { Users }

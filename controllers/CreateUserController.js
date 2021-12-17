@@ -14,7 +14,7 @@ class CreateUserController {
 
         const user = await User.create(con, name, email, phone, passwordHash)
 
-        return res.render("success.ejs")
+        return res.redirect("/users")
 
     }
 }

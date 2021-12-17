@@ -48,6 +48,23 @@ class Products {
         })
     }
 
+    findById(connection, id, callback) {
+        const sql = `SELECT * FROM products WHERE id = ${id};`
+
+        connection.query(sql, (err, result) => {
+            if (err) throw err
+            return callback(result)
+        })
+    }
+
+    update(connection, fields) {
+        const sql = `UPDATE products SET name = '${fields.name}', availability = ${fields.availability} WHERE id = ${fields.id};`
+
+        connection.query(sql, (err, result) => {
+            if (err) throw err
+        })
+    }
+
 }
 
 export { Products }

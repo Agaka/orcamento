@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+</head>
+<body>
+    <a href="/products">Cancelar</a>
+    <form action="/products/update" method="POST">
+        <input type="hidden" name="id" value="<%= product[0].id %>">
+        <input type="text" name="name" value="<%= product[0].name %>" placeholder="Digite o nome">
+        <select name="availability">
+            <% if (product[0].availability == '0') { %>
+                <option value="0">Indisponivel</option>
+            <% } else { %>
+                <option value="1">Disponivel</option>
+            <% } %>
+            <% if (product[0].availability == '0') { %>
+                <option value="1">Disponivel</option>
+            <% } else { %>
+                <option value="0">Indisponivel</option>
+            <% } %>
+        </select>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

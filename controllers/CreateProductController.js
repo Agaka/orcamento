@@ -9,8 +9,7 @@ class CreateProductController {
 
         const product = await Product.create(con, name, parseInt(availability))
 
-        return res.render("success.ejs")
-
+        return res.redirect("/products")
     }
 }
 

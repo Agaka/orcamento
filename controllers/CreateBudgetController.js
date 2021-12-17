@@ -9,7 +9,7 @@ class CreateBudgetController {
 
         const budget = await Budget.create(con, parseInt(userId), measures, description)
 
-        return res.render("success.ejs")
+        return res.redirect("/budgets")
 
     }
 }

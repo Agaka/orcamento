@@ -58,6 +58,23 @@ class Budgets {
         })
     }
 
+    findById(connection, id, callback) {
+        const sql = `SELECT * FROM budget WHERE id = ${id};`
+
+        connection.query(sql, (err, result) => {
+            if (err) throw err
+            return callback(result)
+        })
+    }
+
+    update(connection, fields) {
+        const sql = `UPDATE budget SET measures = '${fields.measures}', description = '${fields.description}' WHERE id = ${fields.id};`
+
+        connection.query(sql, (err, result) => {
+            if (err) throw err
+        })
+    }
+
 }
 
 export { Budgets }

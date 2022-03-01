@@ -1,12 +1,3 @@
-O trabalho foi realizado individualmente usando os mesmos padrões, então cada tabela é atribuída à um
-aluno, porém resolvemos já unir os projetos para já ir desenvolvendo o projeto em si.
-
-Tabela Users = Allan
-Tabela Budgets = Luiz
-Tabela Products = Renata
-
-Foi feito um algumas alterações nas querys de criação de tabelas do banco de dados, segue as querys usadas no projeto:
-
 CREATE TABLE Users (
     id int NOT NULL AUTO_INCREMENT,
     name varchar(255),
